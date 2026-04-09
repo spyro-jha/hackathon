@@ -1,0 +1,91 @@
+:root {
+  --bg: #f6fbff;
+  --card: #ffffff;
+  --text: #1d2f3c;
+  --accent: #3a90ff;
+  --muted: #7a8a99;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.popup-container {
+  width: 320px;
+  padding: 16px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+header p {
+  margin: 6px 0 12px;
+  color: var(--muted);
+}
+
+.progress-card,
+.history-card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 8px 20px rgba(16, 39, 73, 0.06);
+  margin-bottom: 14px;
+}
+
+.star {
+  font-size: 3rem;
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.progress-info {
+  text-align: center;
+  font-weight: bold;
+}
+
+.button-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+button {
+  padding: 10px 0;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.95;
+}
+
+.history-card h2 {
+  margin: 0 0 10px;
+}
+
+#historyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#historyList li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eef2f6;
+  color: var(--muted);
+}
+
+#historyList li:last-child {
+  border-bottom: none;
+}

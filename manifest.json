@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Hydration Reminder",
+  "version": "1.0.0",
+  "description": "Reminds you to drink water and log your intake.",
+  "permissions": [
+    "storage",
+    "notifications",
+    "alarms"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Hydration Reminder"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icon.png"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}

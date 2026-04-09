@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hydration Reminder</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="popup-container">
+      <header>
+        <h1>Hydration</h1>
+        <p>Daily goal: <span id="goalText">2000</span> ml</p>
+      </header>
+
+      <div class="progress-card">
+        <div id="star" class="star">★</div>
+        <div class="progress-info">
+          <span id="intakeText">0</span> / <span id="goalTextDuplicate">2000</span> ml
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button data-amount="125">+125 ml</button>
+        <button data-amount="250">+250 ml</button>
+        <button data-amount="500">+500 ml</button>
+      </div>
+
+      <div class="debug-section">
+        <button id="testNotification">Test Notification</button>
+      </div>
+
+      <div class="history-card">
+        <h2>Today</h2>
+        <ul id="historyList"></ul>
+      </div>
+    </div>
+
+    <script src="utils.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
