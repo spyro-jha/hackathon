@@ -18,6 +18,7 @@ function formatHistory(history) {
 }
 
 function updateUi(state) {
+  console.log('Updating UI with intake:', state.intake);
   const progress = Math.min(1, state.intake / state.goal);
   intakeText.textContent = state.intake;
   goalText.textContent = state.goal;
@@ -27,6 +28,7 @@ function updateUi(state) {
 }
 
 async function addIntake(amount) {
+  console.log('Adding intake:', amount);
   const stored = await getHydrationState();
   const state = stored || DEFAULT_STATE;
   const nextState = {
