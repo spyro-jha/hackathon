@@ -8,7 +8,7 @@ const intakeText = document.getElementById('intakeText');
 const goalText = document.getElementById('goalText');
 const goalTextDuplicate = document.getElementById('goalTextDuplicate');
 const historyList = document.getElementById('historyList');
-const star = document.getElementById('star');
+const progressCard = document.getElementById('progressCard');
 
 function formatHistory(history) {
   return history.map((entry) => {
@@ -23,7 +23,7 @@ function updateUi(state) {
   intakeText.textContent = state.intake;
   goalText.textContent = state.goal;
   goalTextDuplicate.textContent = state.goal;
-  star.style.opacity = 0.4 + progress * 0.6;
+  progressCard.style.background = `linear-gradient(to top, var(--accent) ${progress * 100}%, white ${progress * 100}%)`;
   historyList.innerHTML = state.history.length > 0 ? formatHistory(state.history) : '<li>No drinks logged yet.</li>';
 }
 
