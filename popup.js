@@ -47,6 +47,16 @@ async function testNotification() {
   chrome.runtime.sendMessage({ action: 'testNotification' });
 }
 
+async function resetIntake() {
+  console.log('Resetting today\'s intake');
+  const nextState = {
+    ...DEFAULT_STATE,
+    goal: (await getHydrationState())?.goal || DEFAULT_STATE.goal
+  };
+  await saveHydrationState(nextState);
+  updateUi(nextState);
+}
+
 async function init() {
   const state = (await getHydrationState()) || DEFAULT_STATE;
   updateUi(state);
@@ -59,6 +69,7 @@ async function init() {
   });
 
   document.getElementById('testNotification').addEventListener('click', testNotification);
+  document.getElementById('resetIntake').addEventListener('click', resetIntake);
 }
 
 init();
