@@ -1,6 +1,6 @@
 const DEFAULT_STATE = {
   intake: 0,
-  goal: 2000,
+  goal: 1500,
   history: []
 };
 
@@ -58,7 +58,14 @@ async function resetIntake() {
 }
 
 async function init() {
-  const state = (await getHydrationState()) || DEFAULT_STATE;
+  let state = (await getHydrationState()) || DEFAULT_STATE;
+  
+  // Migrate old goal value from 2000 to 1500
+  if (state.goal === 2000) {
+    state = { ...state, goal: 1500 };
+    await saveHydrationState(state);
+  }
+  
   updateUi(state);
 
   document.querySelectorAll('button[data-amount]').forEach((button) => {
